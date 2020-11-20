@@ -1,11 +1,11 @@
-<div class="card">
+<div class='card flex-grow-1'>
   <%= content_tag(:span, 'premium', class: 'premium') if offer.premium %>
-  <div class="card-body text-center d-flex">
-    <div class='d-flex flex-column'>
-      <h5 class="p-2 card-title"><%= offer.advertiser_name %></h5>
-      <p class="p-2 card-text"><%= offer.description %></p>
+  <div class='card-body text-center d-flex'>
+    <div class='d-flex flex-column flex-grow-1'>
+      <h5 class='p-2 card-title'><%= offer.advertiser_name %></h5>
+      <p class='p-2 card-text'><%= offer.description %></p>
       <div class='p-2 mt-auto'>
-        <a href="<%= offer.url %>" class="btn btn-<%= offer.premium ? 'success' : 'primary' %>" target='_blank'>Shop Now</a>
+        <a href='<%= offer.url %>' class='btn btn-<%= offer.premium ? 'success' : 'primary' %>' target='_blank'>Shop Now</a>
       </div>
     </div>
   </div>
