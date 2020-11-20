@@ -1,0 +1,8 @@
+<h1>Offers</h1>
+<div class="row equal">
+    <% @offers.each do |offer| %>
+      <div class='col-sm-4 d-flex pb-3'>
+        <%= render partial: 'offers/offer', locals: { offer: offer }%>
+      </div>
+    <% end %>
+</div>

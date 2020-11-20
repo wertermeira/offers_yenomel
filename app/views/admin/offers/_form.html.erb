@@ -1,0 +1,9 @@
+<%= simple_form_for([:admin, @offer]) do |f| %>
+  <%= f.input :advertiser_name %>
+  <%= f.input :url %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :starts_at, as: :string %>
+  <%= f.input :ends_at, as: :string %>
+  <%= f.input :premium, as: :boolean %>
+  <%= f.button :submit %>
+<% end %>

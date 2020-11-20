@@ -1,0 +1,32 @@
+<% if flash[:notice].present? %>
+  <div class='alert alert-success'><%= flash[:notice] %></div>
+<% end %>
+<div class='row'>
+  <div class='col-md'>
+  <%= link_to 'New', new_admin_offer_path %>
+  </div>
+</div>
+<table class='table'>
+  <thead>
+    <tr>
+      <th scope='col'>id</th>
+      <th scope='col'>name</th>
+      <th scope='col'>url</th>
+      <th scope='col'>status</th>
+      <th scope='col'>action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @offers.each do |offer| %>
+      <tr>
+        <th scope='row'><%= offer.id %></th>
+        <td><%= offer.advertiser_name %></td>
+        <td><%= link_to offer.url %></td>
+         <td><%= offer.message_status %></td>
+        <td><%= link_to 'Edit', edit_admin_offer_path(offer) %></td>
+        <td><%= button_to offer.disabled_status, admin_offer_update_status_path(offer, status: !offer.disabled), method: :put %></td>
+        <td><%= button_to 'Destroy', admin_offer_path(offer), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
