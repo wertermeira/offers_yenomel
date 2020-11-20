@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
 class Offer < ApplicationRecord
-  DATE_FORMAT = '^Date must be in the following format: yyyy-mm-dd'
   validates :advertiser_name, :url, :description, :starts_at, presence: true
   validates :advertiser_name, uniqueness: true
   validates :description, length: { maximum: 500 }, allow_blank: true
   validates :url, format: { with: URI::DEFAULT_PARSER.make_regexp }, if: -> { url.present? }
-  # validates :starts_at, format: { with: /\d{4}-\d{2}-\d{2}/, message: DATE_FORMAT }
 
   after_validation :validate_starts_at, if: -> { errors.blank? && new_record? }
+
+  def time_format(datetime)
+    datetime.strftime('%H:%M') unless datetime.blank?
+  end
 
   def message_status
     I18n.t("offer_messages.status_#{status}")

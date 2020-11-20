@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Test interview for Lemoney
 
 Things you may want to cover:
 
@@ -12,13 +11,16 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-
-* Database initialization
+Configure the database file config/database.yml
 
 * How to run the test suite
+bundle exec rspec ./spec
+bundle exec rubocop
 
-* Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+Run rails populate:offers to create random offers (Only in dev)
 
-* ...
+* Demo
+offers https://app-yenomel.herokuapp.com/
+admin https://app-yenomel.herokuapp.com/admin/offers

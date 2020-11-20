@@ -75,11 +75,5 @@ test:
 #
 # You can use this database configuration with:
 #
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
 production:
-  <<: *default
-  database: lemoney_production
-  username: lemoney
-  password: <%= ENV['LEMONEY_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

@@ -2,8 +2,8 @@
   <%= f.input :advertiser_name %>
   <%= f.input :url %>
   <%= f.input :description, as: :text %>
-  <%= f.input :starts_at, as: :string %>
-  <%= f.input :ends_at, as: :string %>
+  <%= f.input :starts_at, as: :datetime, include_blank: true %>
+  <%= f.input :ends_at, as: :datetime, include_blank: true %>
   <%= f.input :premium, as: :boolean %>
   <%= f.button :submit %>
 <% end %>
